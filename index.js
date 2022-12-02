@@ -70,8 +70,7 @@ app.post("/gettoken", (req, res)=>{
     };
     res.end(JSON.stringify(data));
 });
-const PORT = process.env.PORT || 3000;
-const hostname = '0.0.0.0';
+
 app.use("/admin/admin", require("./routes/admin/admin"));
 app.use("/admin/trainer", require("./routes/admin/trainer"));
 app.use("/admin/inquiry", require("./routes/admin/inquiry"));
@@ -86,6 +85,6 @@ app.use("/admin/authentication", require("./routes/admin/authentication"));
 app.use("/trainer/authentication", require("./routes/trainer/authentication"));
 app.use("/user/authentication", require("./routes/user/authentication"));
 
-app.listen(PORT,hostname, () => {
+app.listen(3000, () => {
     console.log("Server is running at http://localhost:8081");
 });
